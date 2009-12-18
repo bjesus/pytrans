@@ -36,6 +36,4 @@ if __name__ == "__main__":
         print "What do you want to translate?"
         exit()
     term = " ".join(argv[1:])
-    output = translate(term)
-    print term
-    print output
+    print translate(term)
