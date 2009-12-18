@@ -1,0 +1,7 @@
+Pytrans is a simple script that uses translate.babylon.com interface to translate between 14 languages.
+
+You should be able to easily attach it to any notification system on any operating system, and by binding a keyboard shortcut, easily get the translation for any word you select.
+
+On linux I would advise using xsel or clip to pipe the selected text to the script, and show to the output using notify-send.
+
+Included is a service for Mac OS X, which you can install and then bind any keyboard combination for it. It uses Growl to display the translation.

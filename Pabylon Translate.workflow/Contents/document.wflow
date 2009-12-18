@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AMApplicationBuild</key>
+	<string>246</string>
+	<key>AMApplicationVersion</key>
+	<string>2.1</string>
+	<key>AMDocumentVersion</key>
+	<string>2</string>
+	<key>actions</key>
+	<array>
+		<dict>
+			<key>action</key>
+			<dict>
+				<key>AMAccepts</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Optional</key>
+					<true/>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>AMActionVersion</key>
+				<string>1.0</string>
+				<key>AMParameterProperties</key>
+				<dict>
+					<key>source</key>
+					<dict/>
+				</dict>
+				<key>AMProvides</key>
+				<dict>
+					<key>Container</key>
+					<string>List</string>
+					<key>Types</key>
+					<array>
+						<string>com.apple.applescript.object</string>
+					</array>
+				</dict>
+				<key>ActionBundlePath</key>
+				<string>/System/Library/Automator/Run AppleScript.action</string>
+				<key>ActionName</key>
+				<string>Run AppleScript</string>
+				<key>ActionParameters</key>
+				<dict>
+					<key>source</key>
+					<string>on run {input, parameters}		(* Your script goes here *)	repeat with a from 1 to length of input		set the_word to "" &amp; input	end repeat	set trans to do shell script "python /Library/Scripts/pabylon/pytrans.py " &amp; the_word		tell application "GrowlHelperApp"		-- Make a list of all the notification types 		-- that this script will ever send:		set the allNotificationsList to ¬			{"Pabylon Translation"}				-- Make a list of the notifications 		-- that will be enabled by default.      		-- Those not enabled by default can be enabled later 		-- in the 'Applications' tab of the growl prefpane.		set the enabledNotificationsList to ¬			{"Pabylon Translation"}				-- Register our script with growl.		-- You can optionally (as here) set a default icon 		-- for this script's notifications.		register as application ¬			"Pabylon Translator" all notifications allNotificationsList ¬			default notifications enabledNotificationsList ¬			icon of application "Dictionary"				--	Send a Notification...		notify with name ¬			"Pabylon Translation" title ¬			the_word description ¬			trans application name "Pabylon Translator"			end tell	end run</string>
+				</dict>
+				<key>Application</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>BundleIdentifier</key>
+				<string>com.apple.Automator.RunScript</string>
+				<key>CFBundleVersion</key>
+				<string>1.0</string>
+				<key>CanShowSelectedItemsWhenRun</key>
+				<false/>
+				<key>CanShowWhenRun</key>
+				<true/>
+				<key>Category</key>
+				<array>
+					<string>AMCategoryUtilities</string>
+				</array>
+				<key>Class Name</key>
+				<string>RunScriptAction</string>
+				<key>InputUUID</key>
+				<string>43917D1F-CA37-451A-B1D1-FEF2CE2BEF1F</string>
+				<key>Keywords</key>
+				<array>
+					<string>Run</string>
+				</array>
+				<key>OutputUUID</key>
+				<string>89C6FB69-BDFD-4EB7-9430-53C365FB72F7</string>
+				<key>UUID</key>
+				<string>30CC54F2-BDF8-4B90-9051-D5BFCAA93540</string>
+				<key>UnlocalizedApplications</key>
+				<array>
+					<string>Automator</string>
+				</array>
+				<key>arguments</key>
+				<dict>
+					<key>0</key>
+					<dict>
+						<key>default value</key>
+						<string>on run {input, parameters}
+	
+	(* Your script goes here *)
+	
+	return input
+end run</string>
+						<key>name</key>
+						<string>source</string>
+						<key>required</key>
+						<string>0</string>
+						<key>type</key>
+						<string>0</string>
+						<key>uuid</key>
+						<string>0</string>
+					</dict>
+				</dict>
+				<key>isViewVisible</key>
+				<true/>
+				<key>location</key>
+				<string>309.500000:365.000000</string>
+				<key>nibPath</key>
+				<string>/System/Library/Automator/Run AppleScript.action/Contents/Resources/English.lproj/main.nib</string>
+			</dict>
+			<key>isViewVisible</key>
+			<true/>
+		</dict>
+	</array>
+	<key>connectors</key>
+	<dict/>
+	<key>state</key>
+	<dict>
+		<key>AMLogTabViewSelectedIndex</key>
+		<integer>1</integer>
+		<key>libraryState</key>
+		<dict>
+			<key>actionsMajorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>118</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 381.000000, 448.000000, NO</string>
+					<string>0.000000, 449.000000, 381.000000, 117.000000, NO</string>
+				</array>
+			</dict>
+			<key>actionsMinorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 163.000000, 448.000000, NO</string>
+					<string>164.000000, 0.000000, 217.000000, 448.000000, NO</string>
+				</array>
+			</dict>
+			<key>variablesMajorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 381.000000, 555.000000, NO</string>
+					<string>0.000000, 556.000000, 381.000000, 10.000000, NO</string>
+				</array>
+			</dict>
+			<key>variablesMinorSplitViewState</key>
+			<dict>
+				<key>expandedPosition</key>
+				<real>0.0</real>
+				<key>subviewState</key>
+				<array>
+					<string>0.000000, 0.000000, 163.000000, 555.000000, NO</string>
+					<string>164.000000, 0.000000, 217.000000, 555.000000, NO</string>
+				</array>
+			</dict>
+		</dict>
+		<key>majorSplitViewState</key>
+		<dict>
+			<key>expandedPosition</key>
+			<real>239</real>
+			<key>subviewState</key>
+			<array>
+				<string>0.000000, 0.000000, 381.000000, 611.000000, NO</string>
+				<string>382.000000, 0.000000, 619.000000, 611.000000, NO</string>
+			</array>
+		</dict>
+		<key>minorSplitViewState</key>
+		<dict>
+			<key>expandedPosition</key>
+			<real>162</real>
+			<key>subviewState</key>
+			<array>
+				<string>0.000000, 0.000000, 619.000000, 420.000000, NO</string>
+				<string>0.000000, 430.000000, 619.000000, 162.000000, NO</string>
+			</array>
+		</dict>
+		<key>windowFrame</key>
+		<string>{{284, 90}, {1000, 688}}</string>
+		<key>workflowViewScrollPosition</key>
+		<string>{{0, 0}, {619, 420}}</string>
+	</dict>
+	<key>variables</key>
+	<array>
+		<dict>
+			<key>UUID</key>
+			<string>F8C67CD4-B47B-47F8-A11A-326347389527</string>
+			<key>identifier</key>
+			<string>com.apple.Automator.Variable.AppleScript</string>
+			<key>name</key>
+			<string>Translate</string>
+			<key>value</key>
+			<string>tell application "System Events" to keystroke "c" using {command down}set the_word to the clipboard as textset trans to "dsds"tell application "GrowlHelperApp"	-- Make a list of all the notification types 	-- that this script will ever send:	set the allNotificationsList to ¬		{"The Word", "Another Test Notification"}		-- Make a list of the notifications 	-- that will be enabled by default.      	-- Those not enabled by default can be enabled later 	-- in the 'Applications' tab of the growl prefpane.	set the enabledNotificationsList to ¬		{"The Word"}		-- Register our script with growl.	-- You can optionally (as here) set a default icon 	-- for this script's notifications.	register as application ¬		"Growl AppleScript Sample" all notifications allNotificationsList ¬		default notifications enabledNotificationsList ¬		icon of application "Script Editor"		--	Send a Notification...	notify with name ¬		"The Word" title ¬		the_word description ¬		trans application name "Growl AppleScript Sample"		notify with name ¬		"Another Test Notification" title ¬		"Another Test Notification :) " description ¬		"Alas — you won't see me until you enable me..." application name "Growl AppleScript Sample"	end tell</string>
+		</dict>
+	</array>
+	<key>workflowMetaData</key>
+	<dict>
+		<key>serviceInputTypeIdentifier</key>
+		<string>com.apple.Automator.text</string>
+		<key>serviceOutputTypeIdentifier</key>
+		<string>com.apple.Automator.nothing</string>
+		<key>workflowTypeIdentifier</key>
+		<string>com.apple.Automator.servicesMenu</string>
+	</dict>
+</dict>
+</plist>
